@@ -1,40 +1,35 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import s from './Statistics.module.css'
 
 
-const Statistic= ({
-    options, 
-    onCountTotalFeedback, 
-    onPers}) => (
+function Statistic({good, neutral, bad, total, onPers}) {
+  return (
   <ul className={s.statisticUl}> 
     <li>
-    <p>Good: {options.good}</p>
+    <p>Good: {good}</p>
     </li>
     <li>
-    <p>Neutral: {options.neutral}</p>
+    <p>Neutral: {neutral}</p>
     </li>
     <li>
-    <p>Bad: {options.bad}</p>
+    <p>Bad: {bad}</p>
     </li>
     <li>
-    <p>Total: {onCountTotalFeedback}</p>
+    <p>Total: {total}</p>
     </li>
     <li>
     <p>Positive feedback: {onPers}%</p>
     </li>
   </ul>
 
-)
-
+  )
+}
 export default Statistic;
 
 Statistic.propTypes = {
-    options:
-      propTypes.shape({
-        good: propTypes.number.isRequired,
-        neutral: propTypes.number.isRequired,
-        bad: propTypes.number.isRequired,
-      }).isRequired, 
-    onCountTotalFeedback: propTypes.number,
-    onCountPercentagePositiveFeedback: propTypes.number,
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  percentagePositiveFeedback: PropTypes.number,
 };
