@@ -22,6 +22,6 @@ export default ButtonsFeedback;
 
 
 ButtonsFeedback.propTypes = {
-        options: PropTypes.arrayOf(PropTypes.shape),
-        onCountFeedback: PropTypes.func,
+        options: PropTypes.arrayOf(PropTypes.shape).isRequired,
+        onCountFeedback: PropTypes.func.isRequired,
     };

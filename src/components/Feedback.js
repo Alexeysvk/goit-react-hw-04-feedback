@@ -1,5 +1,4 @@
 import  {useState} from "react";
-import PropTypes from 'prop-types'
 import Section from './Section/Section'
 import Notification from "./Notification/Notification";
 import ButtonsFeedback from './ButtonsFeedback/ButtonsFeedback'
@@ -71,10 +70,4 @@ export default function Feedback(){
     )
 }
 
-
-Feedback.propTypes = {
-  good: PropTypes.number,
-  neutral: PropTypes.number,
-  bad: PropTypes.number,    
-};
 
